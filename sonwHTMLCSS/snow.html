@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>snow</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<link href="" type="text/css" rel="stylesheet" />
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<style>
+			body{
+				background:url(background.jpg);
+				background-size:cover;
+				margin:0px;
+				padding:0px;
+			}
+			.snow{
+				background:url(snow.png);
+				
+				height:100vh;
+				width:200vh;
+				/*background-repeat:repeat;*/
+				animation:snow 0.3s linear infinite;
+			}
+			@keyframes snow{
+				0%{
+					background-position:50px 50px;
+				}
+				20%{
+					background-position:100px 100px;
+				}
+				30%{
+					background-position:150px 150px;
+				}
+				40%{
+					background-position:200px 200px;
+				}
+				60%{
+					background-position:250px 250px;
+				}
+				80%{
+					background-position:300px 300px;
+				}
+				100%{
+					background-position:350px 350px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+	    <div class="snow"></div>
+	    
+		<script type="text/javascript">
+			$('body').on('click',()=>{
+				var w=window.open("abc","newwindow","id=explanation, height=200, width=700,top=400,left=500,menubar=no");
+				w.document.write("<font size='5'>an image for background and an image snow ;<br>animation(css),snow->function,0.3s->duration,linear->unchanged speed,infinite->repeat function;<br>@keyframes->create animation(function),0%->start animation,100%->end animation,background-position change position of image snow;</font>");
+				
+			});
+			
+		</script>
+	
+	</body>
+</html>

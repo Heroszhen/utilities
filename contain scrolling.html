@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN" 
+	"http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html xml:lang="fr" lang="fr" xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>scrolling</title>
+		
+		<meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
+		<link href="" type="text/css" rel="stylesheet"  />
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<style>
+			#contain{
+				width:200px;
+				height:150px;
+				background:pink;
+				/*si le contenu de div ne peut pas s'afficher entièrement, scrollbar apparaît*/
+				overflow:hidden;//scroll->afficher le scrollbar
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div>
+			<font size="5">
+				<a href='https://www.youtube.com/watch?v=xIz9rKQiEFE&t=504s'  target="_blank" >泰牛程序员 韩顺平 16年PHP视频教程 0基础挑战年薪20万 181讲 网站快讯js滚动效果1 </a><br>
+				2 div, 2 contenus dans le  div pere,voir le css du div pere qui utilise "ouverflow:hidden"<br>
+				les  contenus dépassent la hauteur de son div père, le scroll bar apparaît,<br>
+				le div pere déclenche la fonction scroll pour augmenter la hauteur de son scroll afin que le scrollbar descend tout seul,<br>
+				window.setInterval(..,...) sert à la récursivité.<br>
+			</font>
+		</div>
+		<br>
+		<div id="contain" onmouseover="stop()" onmouseout="continu()">
+			<div id="contain1">
+				computer<br>
+				chassis<br>
+				computer case<br>
+				screen<br>
+				keyboard<br>
+				key<br>
+				computer mouse<br>
+				sleeve<br>
+				shirt<br>
+				T-shirt<br>
+				trousers<br>
+				socks<br>
+				shoes<br>
+				sweater<br>
+			</div>
+			
+			<div id="contain2">
+				computer<br>
+				chassis<br>
+				computer case<br>
+				screen<br>
+				keyboard<br>
+				key<br>
+				computer mouse<br>
+				sleeve<br>
+				shirt<br>
+				T-shirt<br>
+				trousers<br>
+				socks<br>
+				shoes<br>
+				sweater<br>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var t = 30;
+			var timer = window.setInterval("scroll()",t);
+			function scroll(){
+				var d = document.getElementById("contain");
+				d.scrollTop +=2;
+				if(d.scrollTop >= document.getElementById("contain1").clientHeight)d.scrollTop=0;
+			}
+			
+			function stop(){
+				window.clearInterval(timer);
+			}
+			function continu(){
+				window.clearInterval(timer);
+				timer = window.setInterval("scroll()",t);
+			}
+		</script>
+	</body>
+</html>

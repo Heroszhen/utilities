@@ -1,0 +1,53 @@
+svg:hover{
+	cursor:pointer;
+}
+
+.znav{
+	width:100%;
+}
+.znav>nav{
+	display:block;
+}
+.znav>nav>div{
+	width:100%;
+	box-sizing: border-box;
+	padding:10px 5px 10px 5px;
+	display:flex;
+	flex-wrap: nowrap;
+}
+
+.znav>nav>div>div{
+	margin-right:20px;
+}
+.znav>div{
+	width:100%;
+}
+.znav>div #btnnav,.znav #hidnav{
+	display:none;
+}
+.znav>div #btnnav:hover{
+	cursor:pointer;
+}
+
+@media (max-width:576px){
+	.znav>nav{
+		display:none;
+	}
+	.znav>nav>div{
+		flex-wrap:wrap;
+		align-content: start;
+		width:60vw;
+		height:100vh;
+		background:rgb(240,240,240) !important;
+		position:absolute;
+		z-index:100;
+		position:fixed;
+		top:0;
+	}
+	.znav>nav>div>div{
+		width:100%;
+	}
+	.znav>div #btnnav,.znav #hidnav{
+		display:block;
+	}
+}

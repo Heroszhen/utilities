@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    
+
+    <style>
+        img{
+            width:60%;
+        }
+        .reveal{
+            opacity: 0;
+            transform:translateY(-30px);
+        }
+        .reveal-visible{
+            opacity: 1;
+            transform:translateY(0px);
+            transition: 3s cubic-bezier(.5,.01,0,.99);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1 class="text-center mb-5">L'API Intersection Observer</h1>
+
+    <div class="jumbotron mb-5">
+            <h1 class="display-4">Tutoriel JavaScript : Apparition au défilement</h1>
+            <p class="lead">https://www.youtube.com/watch?v=2decTjcdDKo&list=PLMLYms3iYS8HNGhsn6MS5oLRGGYe61fSn&index=12&t=96s</p>
+            <hr class="my-4">
+            <p>
+                courbe bezier css<br>
+                https://cubic-bezier.com/#.17,.67,.83,.67
+            </p>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6 mb-1 reveal">
+                <h5 class="text-primary title">text-primary</h5>
+                <div class="introduction">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed tincidunt orci. Sed lacinia nulla purus, a posuere tellus vulputate eget. Duis tincidunt rutrum dui, non ullamcorper lectus congue nec.
+                </div>
+            </div>
+            <div class="col-12 col-md-6 text-center mb-5 myimage">
+                <img src="http://fr.web.img6.acsta.net/r_1280_720/pictures/17/09/11/20/10/0333861.jpg" alt="" class="img-fluid">
+            </div>
+
+            <div class="col-12 col-md-6 mb-1 reveal">
+                    <h5 class="text-primary title">text-primary</h5>
+                    <div class="introduction">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed tincidunt orci. Sed lacinia nulla purus, a posuere tellus vulputate eget. Duis tincidunt rutrum dui, non ullamcorper lectus congue nec.
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 text-center mb-5 myimage">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDJAtoPoW5tl8EvdB1PwfyzMoYWtY6hwt-KhuOdsCOGq46EzsK4g" alt="" class="img-fluid">
+                </div>
+
+                <div class="col-12 col-md-6 mb-1 reveal">
+                <h5 class="text-primary title">text-primary</h5>
+                <div class="introduction">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed tincidunt orci. Sed lacinia nulla purus, a posuere tellus vulputate eget. Duis tincidunt rutrum dui, non ullamcorper lectus congue nec.
+                </div>
+            </div>
+            <div class="col-12 col-md-6 text-center mb-5 myimage">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3p0JwmnS858Mm_aqQpVEZrzFy5SdnC0MDB_0w3AUGCPxehiaq" alt="" class="img-fluid">
+            </div>
+        
+            <div class="col-12 col-md-6 mb-1 reveal">
+                <h5 class="text-primary title">text-primary</h5>
+                <div class="introduction">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed tincidunt orci. Sed lacinia nulla purus, a posuere tellus vulputate eget. Duis tincidunt rutrum dui, non ullamcorper lectus congue nec.
+                </div>
+            </div>
+            <div class="col-12 col-md-6 text-center mb-5 myimage">
+                <img src="https://st.depositphotos.com/1814084/5069/i/950/depositphotos_50690091-stock-photo-alexandra-daddario.jpg" alt="" class="img-fluid">
+            </div>
+
+            <div class="col-12 col-md-6 mb-1 reveal">
+                <h5 class="text-primary title">text-primary</h5>
+                <div class="introduction">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed tincidunt orci. Sed lacinia nulla purus, a posuere tellus vulputate eget. Duis tincidunt rutrum dui, non ullamcorper lectus congue nec.
+                </div>
+            </div>
+            <div class="col-12 col-md-6 text-center mb-5 myimage">
+                <img src="https://i.pinimg.com/originals/5e/66/ec/5e66ec3b3981aefc7acfeff3fb072a95.jpg" alt="" class="img-fluid">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    <script>
+        const ratio = 0.1;
+        var options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: ratio
+        }
+
+        function handleIntersect(entries,observer){
+            entries.forEach(function(entry){
+                if(entry.intersectionRatio > ratio){
+                    //l'élément devient visible
+                    //arrêter l'observateur
+                    //ajouter la class reveal-visible
+                    observer.unobserve(entry.target);
+                    entry.target.classList.add("reveal-visible");
+
+                    //console.log("L'élément visible");
+                }else{
+                    //console.log("L'élément invisible");
+                }
+                //console.log(entry.intersectionRatio);
+            });
+        }
+        const observer = new IntersectionObserver(handleIntersect, options);
+        //pour un seul élément
+        //observer.observe(document.querySelector('.reveal'));
+
+        //pour des éléments
+        document.querySelectorAll('.reveal').forEach(function(r){
+            observer.observe(r);
+        });
+    </script>
+</body>
+</html>

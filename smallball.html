@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>smallball</title>
+		
+		<meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
+		<link href="" type="text/css" rel="stylesheet">
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<style>
+			#sundiv{
+				position:absolute;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div><!--
+			<font size="5">
+				<a href='https://www.youtube.com/watch?v=2z7QS-AnLs4&list=PLaYqF7AnyNPfC2e86m7cbL3-Al7r2x7q2&index=48' target="_blank" >小球撞球游戏</a><br>
+				offsetHeight 是网页内容实际高度，clientHeight 就是透过浏览器看内容的这个区域高度
+			</font>-->
+		</div>
+		
+		<div id="sundiv">
+			<img src="https://media2.giphy.com/media/qZohEEh4bhuQ8/200w.gif" width="40" height="40" />
+		</div>
+		
+		
+		<div style="height:700px">
+			
+		</div>
+		
+		
+		
+		<script type="text/javascript">
+			directx=1;
+			directy=1;
+			sunx=0;
+			suny=0;
+			speed=5;
+			var timer = setInterval("Move()",1000/60);
+			function Move(){
+				
+				sunx+=directx*speed;
+				suny+=directy*speed;
+				sundiv.style.top=suny+"px";
+				sundiv.style.left=sunx+"px";
+				if(sunx + sundiv.offsetWidth >= document.body.clientWidth || sunx <= 0){
+					directx=-1*directx;
+				}
+				if(suny + sundiv.offsetHeight >= document.body.clientHeight || suny < 0){
+					directy=-1*directy;
+				}
+				sundiv.onmouseover = function(){
+					window.clearInterval(timer);
+				}
+				sundiv.onmouseleave = function (){
+					window.clearInterval(timer);
+					timer = window.setInterval("Move()",1000/60);
+				}
+			}
+			
+			(function(){
+				
+			})()
+		</script>
+	</body>
+</html>

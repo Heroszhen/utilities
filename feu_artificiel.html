@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN" 
+	"http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html xml:lang="fr" lang="fr" xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>feu_artificiel</title>
+		
+		<meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
+		<link href="" type="text/css" rel="stylesheet"  />
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<style>
+			*{
+				margin:0;
+				padding:0;
+			}
+			html,body{
+				height:100%;
+				background:black;
+				overflow:hidden;
+			}
+			.firework{
+				position:absolute;
+				width:10px;
+				height:50px;
+				background:red;
+				border-radius:50%;/*définir des coins arrondis pour la bordure d'un élément*/
+			}
+			
+			.fires{
+				position:absolute;
+				width:3px;
+				height:3px;
+				border-radius:50%;
+				background:red;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div>
+			<font size="5" color="green">
+				<a href='https://www.bilibili.com/video/av24462927/'  target="_blank" >javascript编程经典案例：原生js烟花特效</a><br>
+				préparer le css d'une ellipse,<br>
+				créer une ellipse(div) étant horizontale du point sur lequel je clique,<br>
+				l'ellipse va vers le haut jusqu'à ce point,<br>
+				enlever l'ellipse(supprimer ce noeud),et créer des feus,<br>
+				préparer le css d'un pixel(feu),<br>
+			</font>
+		</div>
+		<br>
+		
+		<div>
+		</div>
+		
+		<script type="text/javascript">
+			var nowTime = new Date();
+			document.onclick=function(e){
+				//console.log(this);
+				//console.log(arguments);
+				var x = e.clientX;
+				var y = e.clientY;
+				var h = document.body.offsetHeight;
+				if(new Date() - nowTime > 3000){
+					//créer l'ellipse
+					firework(x,y,h);
+					nowTime = new Date();
+				}
+			}
+			
+			var timer = null;
+			function firework(x,y,h){
+				var oDiv = document.createElement("div");
+				oDiv.className = "firework";
+				oDiv.style.left = x + "px";
+				oDiv.style.right = y + "px";
+				oDiv.style.top = h + "px";
+				oDiv.style.background = mycolor();
+				document.body.appendChild(oDiv);
+				
+				var speed = 10;						
+				timer = window.setInterval(function(){
+					oDiv.style.top = oDiv.offsetTop - speed + "px";
+					
+					if(oDiv.offsetTop <= y){
+						window.clearInterval(timer);
+						document.body.removeChild(oDiv);
+						//créer les feux
+						createFires(x,y,h);
+					}
+				},1000/60);
+			}
+			
+			function createFires(x,y,h){
+				var n = Math.ceil(Math.random()*50)+50;//50-100
+				var fires = [];//enregistrer les feux;
+				for(var i=0;i<n;i++){
+					fires[i] = document.createElement("div");
+					fires[i].className = "fires";
+					fires[i].style.left = x + "px";
+					fires[i].style.top = y + "px";
+					fires[i].style.background=mycolor();
+					fires[i].speedX = Math.random()*20 - 10;//x alea
+					fires[i].speedY = Math.random()*20 - 10;//y alea
+					document.body.appendChild(fires[i]);
+				}
+				
+				timer = setInterval(function(){
+					for(var i=0;i<n;i++){
+						if(fires[i] == null)continue;
+						fires[i].style.left = fires[i].offsetLeft + fires[i].speedX + "px";
+						fires[i].style.top = fires[i].offsetTop + fires[i].speedY + "px";
+						fires[i].speedY = fires[i].speedY + 1;
+						if(fires[i].offsetLeft < 0 || fires[i].offsertLeft > document.body.offsetWidth || fires[i].offsetTop > h){
+							document.body.removeChild(fires[i]);
+							fires[i] = null;
+						}
+					}
+				},1000/60);
+			}
+			
+			//color random
+			function mycolor(){
+				var r = Math.floor(Math.random()*255);
+				var g = Math.floor(Math.random()*255);
+				var b = Math.floor(Math.random()*255);
+				return "rgb("+r+","+g+","+b+")";
+			}
+		</script>
+	</body>
+</html>

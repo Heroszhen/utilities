@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN" 
+	"http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html xml:lang="fr" lang="fr" xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>Les onglets</title>
+		
+		<meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
+		<link href="index.css" type="text/css" rel="stylesheet"  />
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<style>
+			.birthes div{
+				display:none;/*hidden*/
+			}
+
+			.onglet .active a{
+				color:green;
+				background-color:#fff;
+			}
+			.onglet li{
+				float:left;
+				margin:0;
+				padding:0;
+				list-style:none;
+				display:block;
+			}
+			/*pour que la page soit normal apres "float:left;"*/
+			.ongletul:after{
+				display:table;
+				content:' ';
+				clear:both;
+			}
+
+			.onglet a{
+				background-color:#EEE;
+				box-shadow:0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);
+				/*définir les différents écarts de remplissage d'un élément, sur l'ensemble de ses côtés :-top,-right,-bottom,-left*/
+				padding:10px 15px;
+				text-decoration:none;/*non souligné*/
+				color:inherit;
+				display:inline-block;
+			}
+
+			.birthes{
+				padding:20px;
+				background-color:#fff;
+				box-shadow:0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);
+				margin-left:40px;
+				margin-top:-15px;
+			}
+
+			.birthes .active{
+				display:block;/*showed and be as a block like <p>*/
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div>
+			<font size="5">
+				<a href='https://www.youtube.com/watch?v=wKatvNTAPVA&t=457s'  target="_blank" >JavaScript (14/23) : TP : Système d'onglets</a><br>
+				Lorsqu'on clique sur un onglet,<br>
+				on retire la classe active de l'onglet actif,<br>
+				on ajoute la classe active à l'onglet actuel,<br>
+				on retire la classe active sur le contenu actif,<br>
+				on ajoute la calsse active sur le contenu correspondant à mon clic.
+			</font>
+		</div>
+		<p>EXEMPLE</p>
+		<div class="onglet">
+			<ul class="ongletul">
+				<li class="active" ><a href="#MihoIchiki" name="MihoIchiki">Miho Ichiki</a></li>
+				<li><a href="#LeahGotti" name="LeahGotti">Leah Gotti</a></li>
+				<li><a href="#KeeleyHazell" name="KeeleyHazell">Keeley Hazell</a></li>
+			</ul>
+			<div class="birthes">
+				<div class="active" id="MihoIchiki">Miho Ichiki was born on November 29, 1992 in Kanagawa, Japan.</div>
+				<div class="birth" id="LeahGotti">Leah Gotti was born on October 4, 1997 in Sherman, Texas,USA.</div>
+				<div class="birth" id="KeeleyHazell">Keeley Hazell was born on September 18, 1986 in  Lewisham, London, England</div>
+			</div>
+		</div>
+		<br>
+		
+		
+		<script type="text/javascript">
+			(function(){
+				//renvoie une NodeList statique représentant une liste des éléments
+				var tab = document.querySelectorAll('.onglet a');
+				for(var i = 0; i <tab.length;i++){
+					
+					//addEventListener(action,function(e){........}) :met en place une fonction à appeler chaque fois que l'événement spécifié est remis à la cible.
+					tab[i].addEventListener('click',function(e){
+						
+						/* sur le titre actif*/
+						if(this.parentNode.classList.contains('active')) return false;
+					
+						//a->li->ul->div
+						var div = this.parentNode.parentNode.parentNode;
+						
+						//querySelector() retourne le premier Element dans le document correspondant au sélecteur
+						//classList retourne une collection directe  DOMTokenList des attributs de classe de l'élément 
+						div.querySelector('.onglet .active').classList.remove('active');
+						this.parentNode.classList.add('active');
+						
+						/* sur le contenu actif*/
+						div.querySelector('.birthes .active').classList.remove('active');
+						div.querySelector('#'+this.name).classList.add('active');	
+						
+					});
+				}
+			})()
+		</script>
+	</body>
+</html>

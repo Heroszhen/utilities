@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="UTF-8">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="author" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		
+	</head>
+	<body>
+		
+		<form>
+			<input type="file" id="file">
+			<div id="path"></div>
+		</form>
+		
+		<img src="" alt="" >
+		<!--
+		https://jsfiddle.net/lesson8/9NeXg/
+		-->
+		<script>
+			$( document ).ready(function() {
+				
+				$("#file").on("change",function(){
+					console.log($(this).val());
+					$("div#path").html(this.files[0].name);
+					function readURL(input) {
+						if (input.files && input.files[0]) {
+							var reader = new FileReader();
+
+							reader.onload = function (e) {
+								$('img').attr('src', e.target.result);
+							}
+							reader.readAsDataURL(input.files[0]);
+						}
+					}
+					readURL(this);
+				});
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Courgette');
+body{
+	font-size:25px;
+}
+/*
+ item		->smartphone
+ item-a  	->ipad
+ item-b		->laptop
+ item-c		->computer
+ item-d		->super large
+*/ 
+.container{
+	display:flex;
+	margin-left:5%;
+	margin-right:5%;
+	margin-bottom:70px;
+	flex-wrap: wrap;
+}
+
+@media (max-width: 577px) {
+  .container {
+    max-width: 577px;
+  }
+}
+
+@media (min-width:578px) and (max-width: 767px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width:768px) and (max-width: 991px) {
+  .container {
+    max-width: 991px;
+  }
+}
+
+@media (min-width:992px) and (max-width: 1199px) {
+  .container {
+    max-width: 1199px;
+  }
+}
+
+@media (min-width:1200px){
+  .container {/*
+    min-width: 1200px;*/
+  }
+}
+
+.item-1{
+	flex: 24%;
+	max-width: 24%;
+}
+
+.item-2{
+	flex: 49%;
+	max-width: 49%;
+}
+
+.item-3{
+	flex: 74%;
+	max-width: 74%;
+}
+
+.item-4{
+	flex: 100%;
+	max-width: 100%;
+}
+
+@media (max-width: 577px) {
+	.item-1{
+		flex: 24%;
+		max-width: 24%;
+	}
+
+	.item-2{
+		flex: 49%;
+		max-width: 49%;
+	}
+
+	.item-3{
+		flex: 74%;
+		max-width: 74%;
+	}
+
+	.item-4{
+		flex: 100%;
+		max-width: 100%;
+	}
+}
+
+
+
+@media (min-width:578px) and (max-width: 767px){
+	.item-a-1{
+		flex: 24%;
+		max-width: 24%;
+	}
+	
+	.item-a-2{
+		flex: 49%;
+		max-width: 49%;
+	}
+
+	.item-a-3{
+		flex: 74%;
+		max-width: 74%;
+	}
+
+	.item-a-4{
+		flex: 100%;
+		max-width: 100%;
+	}
+}
+
+
+@media (min-width:768px) and (max-width: 991px) {
+	.item-b-1{
+		flex: 24%;
+		max-width: 24%;
+	}
+	
+	.item-b-2{
+		flex: 49%;
+		max-width: 49%;
+	}
+
+	.item-b-3{
+		flex: 74%;
+		max-width: 74%;
+	}
+
+	.item-b-4{
+		flex: 100%;
+		max-width: 100%;
+	}
+}
+
+
+@media (min-width:992px) and (max-width: 1199px){
+	.item-c-1{
+		flex: 24%;
+		max-width: 24%;
+	}
+	
+	.item-c-2{
+		flex: 49%;
+		max-width: 49%;
+	}
+
+	.item-c-3{
+		flex: 74%;
+		max-width: 74%;
+	}
+
+	.item-c-4{
+		flex: 100%;
+		max-width: 100%;
+	}
+}
+
+
+@media (min-width:1200px){
+	.item-d-1{
+		flex: 24%;
+		max-width: 24%;
+	}
+	
+	.item-d-2{
+		flex: 49%;
+		max-width: 49%;
+	}
+
+	.item-d-3{
+		flex: 75%;
+		max-width: 75%;
+	}
+
+	.item-d-4{
+		flex: 100%;
+		max-width: 100%;
+	}
+}
+
+.item-1, .item-2, .item-3, .item-4, .item-a-1, .item-a-2,.item-a-3,.item-a-4, .item-b-1, .item-b-2,.item-b-3,.item-b-4, .item-c-1, .item-c-2,.item-c-3,.item-c-4, .item-d-1, .item-d-2, .item-d-3 , .item-d-4 {
+	padding-right:1%;
+	margin-bottom:40px;
+}
+
+
+.bcr-green{
+	background-color:rgb(220,246,221);
+}
+.bcr-purple{
+	background-color:rgb(230,226,235);
+}
+
+.bi-1{
+	padding:10px;
+	border:20px solid transparent;
+	border-image:url(pictures/art_city_the_european_borders_pattern_psd_3_176490.jpg) 50;
+}
+.bi-2{
+	border: 25px solid transparent;
+	padding: 5px;
+	border-image: url(pictures/ad01ba1f9819ecd187c09f9e50cb3419.jpg) 300 round;
+}
+.bi-3{
+	border: 30px solid transparent;
+	padding: 0px;
+	border-image: url(pictures/medium-396329-2.jpg) 20 round;
+}
+.bi-4{
+	border: 50px solid transparent;
+	padding: 0px;
+	border-image: url(pictures/old-paper-border.svg) 30 round;
+}
+
+.bt-shadow{
+	padding: 10px 20px;
+	font-size: 60%;
+	cursor: pointer;
+	text-align: center;     
+	color: white;
+	background-color: blue;
+	border: none;
+	border-radius: 50px;
+	box-shadow: 1px 4px gray;
+}
+.bt-shadow:active {
+    box-shadow: 0 0px blue;
+    transform: translateY(4px);
+}
+
+#footer{
+	left:0px;
+	background-color:rgb(220,246,221);
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-left:10px;
+}
+
+#headerZ{
+	border:1px solid purple;
+	margin-left:10%;
+	margin-right:10%;
+	text-align:center;
+}
+
+.img-responsive{
+	max-width: 100%;
+	height: auto;
+}
+
+#jumbotron{
+	margin-top:10px;
+	margin-left:15%;
+	margin-right:15%;
+	margin-bottom:50px;
+	padding:30px;
+	background-color:rgb(230,230,230);
+	border-radius:10%;
+}
+
+.tac{
+	text-align:center;
+}
+
+
+/*fonts*/
+.pacifico{
+	font-family: 'Pacifico', cursive;
+}
+.courgette{
+	font-family: 'Courgette', cursive;
+}
+
