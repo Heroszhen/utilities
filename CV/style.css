@@ -1,0 +1,58 @@
+#cv{
+	width: 210mm;
+	height: 297mm;
+	padding:40px;
+	margin:0 auto;
+	/*
+	background:pink;
+	border: 1px solid black;*/
+}
+#photo{
+	display:flex;
+	align-items:center;
+}
+
+#photo img{
+	width:122px;
+	height:122px;
+}
+#photo>div{
+	margin-left:10px;
+}
+
+.oneskill{
+	font-weight:bold;
+	display:flex;
+	align-items:center;
+	margin-bottom:10px;
+}
+
+.oneskill .language{
+	width:100px;
+}
+
+.bulle{
+	display:flex;
+	
+}
+
+.bulle>div{
+	width:15px;
+	height:15px;
+	border:1px solid black;
+	border-radius:50%;
+	margin-right:5px;
+}
+
+.bulle>div.note{
+	border:none;
+	background:rgb(31,151,220);
+}
+
+.onetraining{
+	font-size:13px;
+}
+
+.onelangue{
+	width:250px !important;
+}
