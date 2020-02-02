@@ -9,7 +9,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		
+		<style>
+            img{
+                width:20%;
+                height:auto;
+            }
+        </style>
 	</head>
 	<body>
 		
@@ -26,7 +31,7 @@
 			$( document ).ready(function() {
 				
 				$("#file").on("change",function(){
-					console.log($(this).val());
+					//console.log($(this).val());
 					$("div#path").html(this.files[0].name);
 					function readURL(input) {
 						if (input.files && input.files[0]) {
